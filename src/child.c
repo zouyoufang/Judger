@@ -124,7 +124,7 @@ void child_process(FILE *log_fp, struct config *_config) {
             CHILD_ERROR_EXIT(DUP2_FAILED);
         }
     }
-
+/*
     // set gid
     gid_t group_list[] = {_config->gid};
     if (_config->gid != -1 && (setgid(_config->gid) == -1 || setgroups(sizeof(group_list) / sizeof(gid_t), group_list) == -1)) {
@@ -135,7 +135,7 @@ void child_process(FILE *log_fp, struct config *_config) {
     if (_config->uid != -1 && setuid(_config->uid) == -1) {
         CHILD_ERROR_EXIT(SETUID_FAILED);
     }
-
+*/
     // load seccomp
     if (_config->seccomp_rule_name != NULL) {
         if (strcmp("c_cpp", _config->seccomp_rule_name) == 0) {
